@@ -1,19 +1,19 @@
-# Spendly – Expense Tracker with AI Insights
+# Spendly – AI Expense Tracker
 
-Flask backend + single-page frontend. Expenses are stored in the browser (localStorage);
-the backend only generates AI insights, so your API key stays on the server.
+A personal finance web app that tracks daily expenses, monitors a monthly budget and generates AI-powered spending insights.
 
-## Setup
-```bash
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-cp .env.example .env            # then paste your key from console.anthropic.com
-python app.py
-```
-Open http://127.0.0.1:5000
+**Live demo:** https://your-app.onrender.com
 
-## Structure
-- `app.py` – Flask server, `/api/insights` endpoint (rate-limited, size-capped)
-- `static/index.html` – the UI
-- `.env` – holds ANTHROPIC_API_KEY (never commit it)
+## Features
+- Add, delete and filter expenses by month
+- Monthly budget tracker with progress bar
+- Category breakdown donut chart
+- AI insights from the Claude API (spending patterns, unusual items, saving tips)
+- Export expenses to CSV
+- Responsive UI with automatic light/dark mode
+
+## Tech Stack
+Python, Flask, Claude API (Anthropic), HTML, CSS, JavaScript
+
+## Architecture
+The frontend stores expenses in the browser (localStorage). The Flask backend exposes `/api/insights`, which sends the month's data to Claude and returns insights. The API key stays on the server.
